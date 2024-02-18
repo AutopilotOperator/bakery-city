@@ -1,1 +1,13 @@
 WINDOW_SIZE = (1920,1080)
+FONT_PATH = "assets/fonts/PressStart2P-Regular.ttf"
+
+
+#Colors
+LIGHT_RED = (255, 97, 100)
+RED = (153, 0, 3)
+WHITE = (255, 255, 255)
+GRAY = (222, 222, 222)
+DARK_GRAY = (105, 105, 105)
+LIGHT_BLUE = (102, 179, 255)
+DARKER_LIGHT_BLUE = (76, 138, 205)
+BLACK = (0, 0, 0)
