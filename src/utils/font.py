@@ -21,7 +21,7 @@ class GameFont:
         #Render all lines
         rendered_text_list = []
         for text_line in text_list:
-            rendered_text_list.append(self.font.render(text_line, 1, consts.BLACK))
+            rendered_text_list.append(self.font.render(text_line, 1, consts.LIGHT_BLUE))
 
         #Get needed width for the surface
         max_width = rendered_text_list[0].get_width()

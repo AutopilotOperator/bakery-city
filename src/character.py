@@ -18,22 +18,35 @@ class Character (pygame.sprite.Sprite):
         # self.rect.y = y
         # self.rect.width = 50
         # self.rect.height = 50
-        self.speed = 5
+        self.speed = 2
+
+        
         self.max_frame_id = 1
         self.frame_id = random.randint(0, self.max_frame_id)
         self.oriantion = "right"
         self.frame_count = 20
         self.load_character_frames()
 
+    @property
+    def tile_coordinates(self):
+        y = (3 * self.rect.y - 2 * self.rect.x + 1300) / 120
+        x = (3 * self.rect.y + 2 * self.rect.x - 700) / 120
+        # round the result to 2 decimal places
+        return (round(x, 2), round(y, 2))
+
     def move(self, direction):
         if direction == "right":
             self.rect.x += self.speed
+            return
         if direction == "left":
             self.rect.x -= self.speed
+            return
         if direction == "up":
             self.rect.y -= self.speed
+            return
         if direction == "down":
             self.rect.y += self.speed            
+            return
 
     def load_character_frames(self):
         self.frames = {};
@@ -42,7 +55,7 @@ class Character (pygame.sprite.Sprite):
             for frame_id in range(self.max_frame_id + 1):
                 image = pygame.image.load(f"./assets/images/character/main_{oriantion}_{frame_id}.png")
                 image = pygame.transform.scale(image, (50, 50))
-                self.rect = image.get_rect()
+                # self.rect = image.get_rect()
                 self.frames[oriantion].append(image)
 
 
